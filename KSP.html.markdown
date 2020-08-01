@@ -1,47 +1,58 @@
 ---
-language: clojure
-filename: learnclojure.clj
+language: KSP
+filename: 
 contributors:
-    - ["Adam Bard", "http://adambard.com/"]
+    - ["Cameron Hansen", "github.com/cambo2015"]
 ---
 
-Clojure is a Lisp family language developed for the Java Virtual Machine. It has
-a much stronger emphasis on pure [functional programming](https://en.wikipedia.org/wiki/Functional_programming) than
-Common Lisp, but includes several [STM](https://en.wikipedia.org/wiki/Software_transactional_memory) utilities to handle
-state as it comes up.
-
-This combination allows it to handle concurrent processing very simply,
-and often automatically.
-
-(You need a version of Clojure 1.2 or newer)
+KSP stands for Kontakt Script Processor
+It is a scripting language that is developed by Native Instruments, and is used to make virtual instrument plugins. KSP Scripts runs inside the full version of the Kontakt Player. 
 
 
-```clojure
-; Comments start with semicolons.
+```ksp
+{Comments go inside brackets}
+ {This is a comment}
 
-; Clojure is written in "forms", which are just
-; lists of things inside parentheses, separated by whitespace.
-;
-; The clojure reader assumes that the first thing is a
-; function or macro to call, and the rest are arguments.
+{Variables}
+{Create a variable}
+declare $x
+{Assign 10 to a x}
+$x := 10
 
-; The first call in a file should be ns, to set the namespace
-(ns learnclojure)
+{ You can also do}
+declare $y := 10
+declare $sum := $x +$y
 
-; More basic examples:
 
-; str will create a string out of all its arguments
-(str "Hello" " " "World") ; => "Hello World"
+{Math is straightforward}
 
-; Math is straightforward
-(+ 1 1) ; => 2
-(- 2 1) ; => 1
-(* 1 2) ; => 2
-(/ 2 1) ; => 2
+{Equals 5}
+10/2
+{Equals 30}
+6*5
+{Equals 20}
+15+5
+{Equals 7}
+5+2
+{Equals 1}
+5 mod 2 
 
-; Equality is =
-(= 1 1) ; => true
-(= 2 1) ; => false
+{Boolean operators}
+{greater than}
+$x > $y
+{less than}
+$x < $y
+{greater than or equal}
+$x >= $y
+{less than or equal}
+$x <= $y
+{equal to}
+$x = $y
+{not equal to}
+$x # $y
+{ true if z exists in a range between x and y}
+in_range(z,x,y)
+
 
 ; You need not for logic, too
 (not true) ; => false
